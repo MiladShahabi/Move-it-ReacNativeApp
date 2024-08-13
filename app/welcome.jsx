@@ -1,16 +1,68 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import ScreenWrapper from "../components/ScreenWrapper";
 import { StatusBar } from "expo-status-bar";
+import { hp, wp } from "../helpers/common";
+import { theme } from "../constants/theme";
+import Button from "../components/Button";
 
-const welcome = () => {
+const Welcome = () => {
   return (
     <ScreenWrapper bg="white">
       <StatusBar style="dark" />
+      <View style={styles.container}>
+        {/* welcome image */}
+        <Image
+          style={styles.welcomeImage}
+          resizeMode="contain"
+          source={require("../assets/images/welcomeImage.png")}
+        />
+        {/* title */}
+        <View style={{ gap: 20 }}>
+          <Text style={styles.title}>Move It</Text>
+          <Text style={styles.punchline}>Making Moves as Easy as 1-2-3.</Text>
+        </View>
+        {/* footer */}
+        <View style={styles.footer}>
+          <Button title='Getting started'
+          buttonStyles={{marginHorizontal: wp(3)}}
+
+          />
+        </View>
+      </View>
     </ScreenWrapper>
   );
 };
 
-export default welcome;
+export default Welcome;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "space-around",
+    alignItems: "center",
+    backgroundColor: "white",
+    paddingHorizontal: wp(10),
+  },
+  title: {
+    color: theme.colors.primary,
+    fontSize: hp(4),
+    textAlign: "center",
+    fontWeight: theme.fonts.semibold,
+  },
+  punchline: {
+    color: theme.colors.text,
+    textAlign: "center",
+    paddingHorizontal: wp(8),
+    fontSize: hp(2),
+  },
+  welcomeImage: {
+    height: hp(30),
+    width: wp(80),
+    alignSelf: "center",
+  },
+  footer: {
+    width: "100%",
+    gap: 30,
+  },
+});
