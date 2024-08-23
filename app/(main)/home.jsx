@@ -1,4 +1,4 @@
-import { Button, StyleSheet, Text, View } from "react-native";
+import { Alert, Button, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import ScreenWrapper from "../../components/ScreenWrapper";
 import { useAuth } from "../../contexts/AuthContext";
@@ -8,8 +8,8 @@ import { supabase } from "../../lib/supabase";
 const Home = () => {
   const { user, setAuth } = useAuth();
 
-  console.log('user: ', user);
-  
+  //console.log('user: ', user);
+
   const onLogout = async () => {
     //setAuth(null);
     const { error } = await supabase.auth.signOut();
