@@ -53,7 +53,7 @@ const Login = () => {
     <ScreenWrapper bg="white">
       <StatusBar style="dark" />
       <View style={styles.container}>
-        <BackButton router={router} />
+        <BackButton iconColor={theme.colors.text} router={router} />
 
         {/* Welcome */}
         <View>

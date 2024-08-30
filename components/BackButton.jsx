@@ -3,15 +3,19 @@ import React from "react";
 import Icon from "../assets/icons";
 import { theme } from "../constants/theme";
 import { router } from "expo-router";
+import { hp, wp } from "../helpers/common";
 
-const BackButton = ({ size = 26, router }) => {
+const BackButton = ({ size = 26, router, BackButtonStyle, iconColor}) => {
   return (
-    <Pressable onPress={() => router.back()} style={styles.button}>
+    <Pressable
+      onPress={() => router.back()}
+      style={[styles.button, BackButtonStyle]}
+    >
       <Icon
         name="arrowLeft"
         strokeWidth={2.5}
         size={size}
-        color={theme.colors.text}
+        color={iconColor}
       />
     </Pressable>
   );
@@ -24,6 +28,6 @@ const styles = StyleSheet.create({
     alignSelf: "flex-start",
     padding: 5,
     borderRadius: theme.radius.sm,
-    backgroundColor: 'rgba(0,0,0,0.07)'
+    backgroundColor: "rgba(0,0,0,0.07)",
   },
 });
