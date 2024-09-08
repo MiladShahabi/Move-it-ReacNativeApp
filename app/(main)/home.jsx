@@ -78,7 +78,7 @@ const Home = () => {
           />
         </View>
       </View>
-      {/* <Button title="Logout" onPress={onLogout} /> */}
+      <Button title="Logout" onPress={onLogout} />
     </ScreenWrapper>
   );
 };
